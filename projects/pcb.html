@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mini-UAV optical sensing PCB case study by Bernardo Nascimento: photodiode analog front end, breadboard testing, oscilloscope validation, and a 7 by 7 millimeter KiCad layout.">
+  <title>Micro-UAV Optical Sensor PCB — Bernardo Nascimento</title>
+  <link rel="stylesheet" href="../styles.css"><script defer src="../script.js"></script>
+</head>
+<body class="project-page">
+<header class="site-header"><nav class="nav container" aria-label="Primary navigation"><a class="brand" href="../index.html">Bernardo <span>Nascimento</span></a><button class="mobile-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button><div class="nav-links"><a href="../index.html#work">Work</a><a href="../index.html#about">About</a><a href="../index.html#experience">Experience</a><a class="nav-cta" href="../index.html#contact">Contact</a></div></nav></header>
+<main>
+
+<section class="project-hero">
+  <div class="project-hero-inner container">
+    <a class="back-link" href="../index.html#work">← Back to all work</a>
+    <p class="eyebrow">Penn Modular Robotics Laboratory · Embedded Sensing</p>
+    <h1>Micro-UAV Optical Sensor PCB</h1>
+    <p class="lead">Designing and miniaturizing a photodiode-based analog front end for lighthouse localization on a palm-sized aerial robot.</p>
+    <div class="project-meta-row">
+      <div class="project-meta"><span>Role</span><strong>Undergraduate Researcher</strong></div>
+      <div class="project-meta"><span>Organization</span><strong>ModLab · Penn GRASP</strong></div>
+      <div class="project-meta"><span>Board target</span><strong>7 × 7 mm</strong></div>
+      <div class="project-meta"><span>Focus</span><strong>Analog · PCB · Testing</strong></div>
+    </div>
+    <div class="project-hero-media">
+      <img class="contain" src="../assets/images/pcb-layout.jpg" alt="Compact 7 by 7 millimeter PCB layout">
+      <div class="stack">
+        <img class="contain" src="../assets/images/pcb-schematic.jpg" alt="Photodiode transimpedance and gain-stage schematic">
+        <img src="../assets/images/pcb-oscilloscope.jpg" alt="Oscilloscope showing detected lighthouse pulses">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="project-body">
+  <div class="case-grid container">
+    <aside class="case-aside">
+      <h3>Case study</h3>
+      <ul><li><a href="#challenge">Challenge</a></li><li><a href="#circuit">Analog front end</a></li><li><a href="#prototype">Bench validation</a></li><li><a href="#layout">PCB miniaturization</a></li><li><a href="#outcome">Outcome</a></li></ul>
+      <div class="aside-tags"><span class="tag">KiCad</span><span class="tag">Analog</span><span class="tag">PCB</span><span class="tag">Instrumentation</span></div>
+    </aside>
+    <div class="case-main">
+      <section class="case-section reveal" id="challenge">
+        <span class="section-no">01 · THE CHALLENGE</span>
+        <h2>Extract reliable optical timing signals inside an extremely small airframe.</h2>
+        <p>The mini UAV uses a lighthouse-style tracking system whose infrared sweeps must be converted into clean electrical pulses before the flight computer can estimate position. The sensing electronics therefore had to be sensitive, fast, compact, low-power, and physically small enough to fit on the vehicle.</p>
+        <div class="contribution-box"><h3>My contribution</h3><ul class="contribution-list">
+          <li>Designed a photodiode analog front end around a compact dual operational amplifier.</li>
+          <li>Combined transimpedance conversion, filtering, and additional voltage gain.</li>
+          <li>Built a breadboard prototype to verify signal behavior before committing to a PCB.</li>
+          <li>Used an oscilloscope to confirm clean, repeatable pulses from the lighthouse sweep.</li>
+          <li>Selected compact packages and created custom footprints to meet severe space constraints.</li>
+          <li>Laid out a two-layer 7 × 7 mm board in KiCad with power, signal, and connector routing.</li>
+        </ul></div>
+        <div class="stats-band"><div class="stat-card"><strong>7 × 7</strong><span>mm board target</span></div><div class="stat-card"><strong>2 stage</strong><span>Signal conditioning</span></div><div class="stat-card"><strong>3.3 V</strong><span>System supply</span></div></div>
+      </section>
+
+      <section class="case-section reveal" id="circuit">
+        <span class="section-no">02 · ANALOG FRONT END</span>
+        <h2>From photodiode current to a digital-ready pulse.</h2>
+        <p>The first stage converts the photodiode’s small current into a voltage using a transimpedance amplifier. A second stage provides additional gain and conditioning so the lighthouse sweep produces a signal with enough amplitude and edge definition for downstream timing electronics.</p>
+        <p>I selected the TLV9062 dual op-amp to consolidate both stages into a compact package while maintaining the bandwidth and rail-to-rail behavior needed for a 3.3 V system.</p>
+        <figure class="figure"><img class="contain" src="../assets/images/pcb-schematic.jpg" alt="KiCad schematic of the photodiode signal-conditioning circuit"><figcaption>Analog front-end schematic: photodiode current conversion, filtering, and second-stage gain.</figcaption></figure>
+      </section>
+
+      <section class="case-section reveal" id="prototype">
+        <span class="section-no">03 · BENCH VALIDATION</span>
+        <h2>Verify the signal chain before shrinking it.</h2>
+        <p>Before finalizing the board, I implemented the circuit on a breadboard and tested it against the lighthouse source. The oscilloscope trace showed distinct, trackable pulses, providing confidence that the circuit topology and component values could support the localization pipeline.</p>
+        <div class="figure-grid"><figure class="figure"><img src="../assets/images/pcb-breadboard.jpg" alt="Breadboard prototype of the optical sensing circuit"><figcaption>Breadboard prototype used for rapid component and signal testing.</figcaption></figure><figure class="figure"><img src="../assets/images/pcb-oscilloscope.jpg" alt="Oscilloscope trace with lighthouse pulses"><figcaption>Measured output showing clean optical sweep pulses.</figcaption></figure></div>
+      </section>
+
+      <section class="case-section reveal" id="layout">
+        <span class="section-no">04 · PCB MINIATURIZATION</span>
+        <h2>Packaging the complete sensing chain into 49 mm².</h2>
+        <p>The final layout required aggressive component placement and routing while preserving sensible return paths, accessible connector pads, and manufacturable clearances. I assigned compact footprints, created custom geometry where needed, and iterated the placement around the dual op-amp and board-edge interface.</p>
+        <figure class="figure poster-figure"><img class="contain" src="../assets/images/pcb-layout.jpg" alt="Two-layer KiCad layout for the mini UAV optical sensor"><figcaption>Final two-layer PCB layout designed to fit within a 7 × 7 mm envelope.</figcaption></figure>
+      </section>
+
+      <section class="case-section reveal" id="outcome">
+        <span class="section-no">05 · OUTCOME</span>
+        <h2>A complete design path from physics to a manufacturable board.</h2>
+        <p>This project connected optical sensing, analog circuit design, instrumentation, component selection, footprint design, and physical PCB layout. It taught me to treat electrical performance and mechanical packaging as one coupled engineering problem.</p>
+        <div class="callout">The central design challenge was not simply making the circuit work—it was preserving that performance while shrinking the entire sensing chain to a board smaller than a fingernail.</div>
+      </section>
+    </div>
+  </div>
+</section>
+<section class="project-next"><a href="heat-engine.html"><div class="project-next-inner container"><div><small>Next project</small><h2>Stirling Heat Engine</h2></div><span class="next-circle">→</span></div></a></section>
+
+</main>
+<footer class="footer"><div class="footer-inner container"><span>© 2026 Bernardo Nascimento</span><span>Mechanical Engineering · University of Pennsylvania</span></div></footer>
+</body></html>

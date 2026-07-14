@@ -16,8 +16,9 @@
       <div class="nav-links">
         <a href="#work">Work</a>
         <a href="#about">About</a>
+        <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
-        <a class="nav-cta" href="mailto:berniebpn@gmail.com">Email me</a>
+        <a class="nav-cta" href="#contact">Contact</a>
       </div>
     </nav>
   </header>
@@ -31,7 +32,7 @@
           <p>Mechanical Engineering student working across propulsion, robotics, structures, intelligent manufacturing, and embedded systems.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#work">Explore my work <span class="arrow">→</span></a>
-            <a class="btn btn-secondary" href="mailto:berniebpn@gmail.com">Get in touch</a>
+            <a class="btn btn-secondary" href="#contact">Get in touch</a>
           </div>
           <div class="hero-affiliations" aria-label="Affiliations">
             <span>UPenn MEAM</span>
@@ -143,18 +144,18 @@
           <span class="section-index">04 — 06</span>
         </div>
         <div class="more-grid">
-          <article class="small-project reveal">
-            <img src="assets/images/pcb.jpg" alt="Photodiode amplifier circuit schematic">
-            <div class="small-project-body"><span>Embedded sensing</span><h3>Micro-UAV Optical Sensor PCB</h3><p>Miniaturized photodiode signal conditioning and PCB design for lighthouse-based localization.</p></div>
-          </article>
-          <article class="small-project reveal">
-            <img src="assets/images/heat-engine.jpg" alt="CAD model of a student-built heat engine">
-            <div class="small-project-body"><span>Design & fabrication</span><h3>Heat Engine Manufacturing</h3><p>Mechanical design, component integration, machining, and assembly of a functional heat engine.</p></div>
-          </article>
-          <article class="small-project reveal">
-            <img src="assets/images/titan-aircraft.jpg" alt="Aircraft and equations used for performance analysis on Titan">
-            <div class="small-project-body"><span>Aerodynamics</span><h3>Propeller Aircraft on Titan</h3><p>First-principles analysis of aircraft performance in Titan’s low-gravity, dense-atmosphere environment.</p></div>
-          </article>
+          <a class="small-project reveal" href="projects/pcb.html">
+            <img src="assets/images/pcb-layout.jpg" alt="Compact PCB layout for a lighthouse-tracking photodiode sensor">
+            <div class="small-project-body"><span>Embedded sensing</span><h3>Micro-UAV Optical Sensor PCB</h3><p>Miniaturized photodiode signal conditioning, breadboard validation, and a 7 × 7 mm custom PCB.</p><b>View project →</b></div>
+          </a>
+          <a class="small-project reveal" href="projects/heat-engine.html">
+            <img src="assets/images/heat-engine-render.jpg" alt="CAD render of a Stirling heat engine">
+            <div class="small-project-body"><span>Design & fabrication</span><h3>Stirling Heat Engine</h3><p>Precision machining, GD&amp;T, assembly, and testing of a functional engine that reached 1,700 RPM.</p><b>View project →</b></div>
+          </a>
+          <a class="small-project reveal" href="projects/titan-aircraft.html">
+            <img src="assets/images/titan-analysis-overview.jpg" alt="Equations and performance plots from an aircraft analysis on Titan">
+            <div class="small-project-body"><span>Aerodynamics · Applied mathematics</span><h3>Propeller Aircraft on Titan</h3><p>Differential-equation modeling of aircraft performance in Titan’s low-gravity, dense atmosphere.</p><b>View project &amp; paper →</b></div>
+          </a>
         </div>
       </div>
     </section>
@@ -176,14 +177,52 @@
       </div>
     </section>
 
+    <section class="section experience-section" id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Experience &amp; education</p>
+            <h2 class="section-title">Research, engineering teams, and hands-on development.</h2>
+          </div>
+          <span class="section-index">2023 — Present</span>
+        </div>
+        <div class="experience-grid">
+          <div class="timeline reveal">
+            <article class="timeline-item"><span>Jan 2025 — Present</span><h3>Undergraduate Researcher</h3><p>Modular Robotics Laboratory · University of Pennsylvania</p></article>
+            <article class="timeline-item"><span>May 2025 — Jul 2025</span><h3>International Research Intern</h3><p>Institute of Textile Technology · RWTH Aachen University</p></article>
+            <article class="timeline-item"><span>Aug 2024 — May 2028</span><h3>B.S.E. Mechanical Engineering &amp; Applied Mechanics</h3><p>University of Pennsylvania · School of Engineering and Applied Science</p></article>
+            <article class="timeline-item"><span>Jun 2023</span><h3>Intern</h3><p>Sambazon, Inc.</p></article>
+          </div>
+          <figure class="experience-photo reveal">
+            <img src="assets/images/rwth-presentation.jpg" alt="Bernardo presenting neural-network research at RWTH Aachen">
+            <figcaption>Presenting the IntelliDrape mesh-graph and neural-ranking work at RWTH Aachen.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <section class="contact-section" id="contact">
       <div class="contact-grid container reveal">
         <div>
           <h2>Let’s build something ambitious.</h2>
           <p>I am interested in aerospace, robotics, advanced manufacturing, and multidisciplinary mechanical systems.</p>
+          <div class="email-list" aria-label="Email addresses">
+            <div class="email-card">
+              <span>Penn Engineering</span>
+              <a href="mailto:bnas@seas.upenn.edu?subject=Engineering%20Portfolio%20Inquiry">bnas@seas.upenn.edu</a>
+              <button class="copy-email" type="button" data-email="bnas@seas.upenn.edu">Copy</button>
+            </div>
+            <div class="email-card">
+              <span>Personal</span>
+              <a href="mailto:berniebpn@gmail.com?subject=Engineering%20Portfolio%20Inquiry">berniebpn@gmail.com</a>
+              <button class="copy-email" type="button" data-email="berniebpn@gmail.com">Copy</button>
+            </div>
+          </div>
+          <p class="email-note">Click an address to open your mail app, or use Copy if your browser does not have one configured.</p>
         </div>
         <div class="contact-actions">
-          <a class="btn btn-light" href="mailto:berniebpn@gmail.com">Email me <span class="arrow">→</span></a>
+          <a class="btn btn-light" href="mailto:bnas@seas.upenn.edu?subject=Engineering%20Portfolio%20Inquiry">Email Penn address <span class="arrow">→</span></a>
+          <a class="btn btn-outline-light" href="mailto:berniebpn@gmail.com?subject=Engineering%20Portfolio%20Inquiry">Email personal address</a>
         </div>
       </div>
     </section>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Independent aerospace analysis by Bernardo Nascimento using differential equations to model Cessna 172 performance and propeller design in Titan's atmosphere, with the full paper available as a PDF.">
+  <title>Propeller Aircraft on Titan — Bernardo Nascimento</title>
+  <link rel="stylesheet" href="../styles.css"><script defer src="../script.js"></script>
+</head>
+<body class="project-page">
+<header class="site-header"><nav class="nav container" aria-label="Primary navigation"><a class="brand" href="../index.html">Bernardo <span>Nascimento</span></a><button class="mobile-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button><div class="nav-links"><a href="../index.html#work">Work</a><a href="../index.html#about">About</a><a href="../index.html#experience">Experience</a><a class="nav-cta" href="../index.html#contact">Contact</a></div></nav></header>
+<main>
+
+<section class="project-hero">
+  <div class="project-hero-inner container">
+    <a class="back-link" href="../index.html#work">← Back to all work</a>
+    <p class="eyebrow">Independent Aerospace Analysis · Applied Differential Equations</p>
+    <h1>Propeller Aircraft on Titan</h1>
+    <p class="lead">A first-principles exploration of how a Cessna 172–class aircraft would perform in Titan’s dense, cryogenic, low-gravity atmosphere—and how its propeller might be redesigned for that environment.</p>
+    <div class="project-meta-row">
+      <div class="project-meta"><span>Format</span><strong>Independent Research Paper</strong></div>
+      <div class="project-meta"><span>Methods</span><strong>ODEs · Aerodynamics</strong></div>
+      <div class="project-meta"><span>Reference aircraft</span><strong>Cessna 172</strong></div>
+      <div class="project-meta"><span>Environment</span><strong>Titan · Saturn</strong></div>
+    </div>
+    <div class="resource-actions hero-resources">
+      <a class="resource-btn light" href="../assets/documents/titan-aircraft-analysis.pdf" target="_blank" rel="noopener">View full paper <span>↗</span></a>
+      <a class="resource-btn ghost" href="../assets/documents/titan-aircraft-analysis.pdf" download>Download PDF <span>↓</span></a>
+    </div>
+    <div class="project-hero-media one"><img class="contain" src="../assets/images/titan-analysis-overview.jpg" alt="Equations, plots, and performance results from the Titan aircraft study"></div>
+  </div>
+</section>
+<section class="project-body"><div class="case-grid container">
+  <aside class="case-aside"><h3>Case study</h3><ul><li><a href="#question">Research question</a></li><li><a href="#model">Flight model</a></li><li><a href="#performance">Predicted performance</a></li><li><a href="#redesign">Propeller redesign</a></li><li><a href="#paper">Full paper</a></li></ul><div class="aside-tags"><span class="tag">Differential Equations</span><span class="tag">Aerodynamics</span><span class="tag">Propellers</span><span class="tag">Desmos</span></div></aside>
+  <div class="case-main">
+    <section class="case-section reveal" id="question"><span class="section-no">01 · RESEARCH QUESTION</span><h2>What happens when an Earth aircraft is placed in an alien atmosphere?</h2><p>Inspired by NASA’s Dragonfly mission, I built a mathematical model around a familiar reference aircraft: the Cessna 172. The study compared Earth and Titan conditions, then investigated lift, drag, propeller thrust, Reynolds number, takeoff performance, payload, and range.</p><div class="contribution-box"><h3>What I modeled</h3><ul class="contribution-list"><li>Lift and minimum flight speed under Titan gravity and atmospheric density.</li><li>Propeller thrust and aircraft drag at steady flight conditions.</li><li>Propeller Reynolds-number behavior in Titan’s dense, low-viscosity atmosphere.</li><li>Aircraft acceleration as a nonlinear differential equation.</li><li>Velocity as a function of time and range as its definite integral.</li><li>Propeller-radius changes intended to improve the predicted operating envelope.</li></ul></div></section>
+    <section class="case-section reveal" id="model"><span class="section-no">02 · MATHEMATICAL MODEL</span><h2>Connect atmosphere, aircraft geometry, propulsion, and time.</h2><p>I began with the four forces of flight, then used Cessna specifications to estimate lift and drag parameters. A propeller thrust relation was coupled to aircraft drag, and the net force was divided by total mass to produce a velocity-dependent acceleration model.</p><p>Rewriting acceleration as <em>dv/dt</em> produced a separable nonlinear differential equation. Solving it yielded velocity as a function of time; integrating that expression over the fuel-duration interval produced a range estimate as a function of payload.</p><figure class="figure"><img class="contain" src="../assets/images/titan-equations.jpg" alt="Differential-equation derivations and range plots from the Titan aircraft paper"><figcaption>Selected derivations and plots connecting thrust, drag, acceleration, velocity, payload, and distance.</figcaption></figure></section>
+    <section class="case-section reveal" id="performance"><span class="section-no">03 · MODEL RESULTS</span><h2>Dense air improves lift—but creates a difficult propeller regime.</h2><p>Within the assumptions of the model, Titan’s low gravity and high atmospheric density allowed large theoretical payloads and very low stall speeds. The same environment, however, drove the propeller Reynolds number high enough that the study’s selected stability constraint became the dominant limit on forward speed.</p><div class="stats-band"><div class="stat-card"><strong>11.58</strong><span>m/s baseline modeled max speed</span></div><div class="stat-card"><strong>371</strong><span>km modeled full-cargo range</span></div><div class="stat-card"><strong>5.64</strong><span>km modeled takeoff distance</span></div></div><p>The analysis therefore exposed a system-level tradeoff: favorable lift and payload conditions did not automatically produce a practical transport aircraft because propeller behavior and acceleration constrained the usable flight envelope.</p></section>
+    <section class="case-section reveal" id="redesign"><span class="section-no">04 · PROPELLER REDESIGN</span><h2>Use the model to propose a Titan-specific geometry.</h2><p>I treated blade radius as a design variable and related it to chord length and blade area. The resulting model identified a shorter propeller configuration intended to reduce the Reynolds-number constraint while permitting a higher forward speed.</p><div class="stats-band"><div class="stat-card"><strong>0.373</strong><span>m proposed blade radius</span></div><div class="stat-card"><strong>13.5</strong><span>m/s redesigned target speed</span></div><div class="stat-card"><strong>16.6%</strong><span>Modeled speed increase</span></div></div><div class="callout">The project was an exercise in engineering modeling rather than a flight-certified design. Its value was in building a connected mathematical framework, exposing dominant constraints, and using those constraints to motivate a geometry change.</div></section>
+    <section class="case-section reveal" id="paper"><span class="section-no">05 · FULL PAPER</span><h2>Read the complete derivation, assumptions, results, and sources.</h2><p>The full paper includes the atmospheric assumptions, aircraft data, propeller equations, differential-equation derivation, payload and range model, takeoff calculation, redesign study, and bibliography.</p><div class="resource-actions"><a class="resource-btn" href="../assets/documents/titan-aircraft-analysis.pdf" target="_blank" rel="noopener">Open PDF in a new tab <span>↗</span></a><a class="resource-btn secondary" href="../assets/documents/titan-aircraft-analysis.pdf" download>Download the paper <span>↓</span></a></div><div class="pdf-frame"><iframe src="../assets/documents/titan-aircraft-analysis.pdf#view=FitH" title="Analysis of Propeller Aircraft Performance on Titan PDF"><p>Your browser cannot display PDFs inline. <a href="../assets/documents/titan-aircraft-analysis.pdf">Open the paper here.</a></p></iframe></div></section>
+  </div>
+</div></section>
+<section class="project-next"><a href="carbon-fiber.html"><div class="project-next-inner container"><div><small>Return to featured work</small><h2>Autonomous Carbon-Fiber Layup</h2></div><span class="next-circle">→</span></div></a></section>
+
+</main>
+<footer class="footer"><div class="footer-inner container"><span>© 2026 Bernardo Nascimento</span><span>Mechanical Engineering · University of Pennsylvania</span></div></footer>
+</body></html>

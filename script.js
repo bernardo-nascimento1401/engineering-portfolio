@@ -46,3 +46,33 @@ if (sections.length && asideLinks.length) {
   }, { rootMargin: '-30% 0px -58% 0px' });
   sections.forEach(s => sectionObserver.observe(s));
 }
+
+// Copy visible contact addresses even when no desktop mail client is configured.
+async function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.setAttribute('readonly', '');
+  textarea.style.position = 'fixed';
+  textarea.style.opacity = '0';
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  textarea.remove();
+}
+
+document.querySelectorAll('.copy-email').forEach((button) => {
+  button.addEventListener('click', async () => {
+    const original = button.textContent;
+    try {
+      await copyText(button.dataset.email || '');
+      button.textContent = 'Copied';
+    } catch (error) {
+      button.textContent = 'Select address';
+    }
+    window.setTimeout(() => { button.textContent = original; }, 1800);
+  });
+});
